@@ -79,6 +79,20 @@
           "https://www.linkedin.com/in/dr-nidhi-thacker-4120082ba/"
         ]
       },
+      "employee": [
+        {
+          "@type": "Person",
+          "name": "Dr. Shivani Meghani",
+          "jobTitle": "Cosmetologist & Laser Specialist",
+          "description": "Certified Laser Specialist at La Sparkle Aesthetic & Wellness Clinic."
+        },
+        {
+          "@type": "Person",
+          "name": "Dr. Ritu Pitroda",
+          "jobTitle": "Cosmetologist & Trichologist",
+          "description": "Clinical Hair Restoration Specialist at La Sparkle Aesthetic & Wellness Clinic."
+        }
+      ],
       "sameAs": [
         "https://www.instagram.com/dr_nidhi_thacker/",
         "https://www.facebook.com/lasparklebhuj/"
@@ -984,6 +998,73 @@
       color: rgba(255, 255, 255, .92)
     }
 
+    /* TEAM */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 30px 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(255, 255, 255, .7);
+      transition: transform .4s cubic-bezier(.2, .8, .2, 1), box-shadow .4s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .team-portrait {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 1/1.16;
+      border-radius: 50% 50% 24px 24px / 62% 62% 24px 24px;
+      background: var(--grad-deep);
+      overflow: hidden;
+      margin-bottom: 22px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .team-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 15%;
+    }
+
+    .team-card h3 {
+      font-size: 1.4rem;
+      color: var(--plum);
+      margin-bottom: 6px;
+    }
+
+    .team-card .role {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--magenta-deep);
+      margin-bottom: 12px;
+    }
+
+    .team-card .qualifications {
+      font-size: .92rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
     /* ABOUT */
     .about-grid {
       display: grid;
@@ -1686,6 +1767,17 @@
         grid-template-columns: repeat(2, 1fr)
       }
 
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .team-grid .team-card:last-child {
+        grid-column: span 2;
+        max-width: 480px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
       .why-grid,
       .gallery {
         grid-template-columns: repeat(2, 1fr)
@@ -1708,9 +1800,16 @@
 
       .svc-grid,
       .tst-grid,
+      .team-grid,
       .why-grid,
       .gallery {
         grid-template-columns: 1fr
+      }
+
+      .team-grid .team-card:last-child {
+        grid-column: span 1;
+        max-width: none;
+        margin: 0;
       }
 
       .foot-grid {
@@ -1744,6 +1843,7 @@
     <ul class="nav-links" id="navlinks">
       <li><a href="#treatments">Treatments</a></li>
       <li><a href="#about">Dr. Nidhi</a></li>
+      <li><a href="#team">Our Team</a></li>
       <li><a href="#why">Why Us</a></li>
       <li><a href="#results">Results</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -1798,7 +1898,7 @@
         </div>
         <div class="dome-stage reveal">
           <div class="dome">
-            <img src="assets/dr-nidhi-hero.jpg"
+            <img src="assets/dr-nidhi-hero.jpeg"
               alt="Dr. Nidhi Thacker — founder of La Sparkle Aesthetic & Wellness Clinic, Kutch" loading="eager"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
             <div class="dome-fallback" style="display:flex">
@@ -1839,6 +1939,43 @@
           Restoration<span></span></span><span>Acupuncture &amp; Hijama<span></span></span>
       </div>
     </div>
+
+    <!-- OUR TEAM -->
+    <section class="section" id="team">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow center">Expert Care</span>
+          <h2>Meet <em>our</em> team of doctors</h2>
+          <p>A dedicated team of qualified professionals, led by Dr. Nidhi Thacker, committed to delivering safe, precise, and natural-looking aesthetic results.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal">
+            <div class="team-portrait">
+              <img src="assets/dr-nidhi-hero.jpeg" alt="Dr. Nidhi Thacker — Founder & Lead Cosmetologist at La Sparkle" loading="lazy" />
+            </div>
+            <h3>Dr. Nidhi Thacker</h3>
+            <div class="role">Founder &amp; Lead Cosmetologist</div>
+            <p class="qualifications">Dental Surgeon · Fellowship in Facial Aesthetics · Certified Cosmetologist &amp; Laser Specialist · Trichologist</p>
+          </div>
+          <div class="team-card reveal">
+            <div class="team-portrait">
+              <img src="assets/dr-shivani-meghani.jpeg" alt="Dr. Shivani Meghani — Cosmetologist & Laser Specialist at La Sparkle" loading="lazy" />
+            </div>
+            <h3>Dr. Shivani Meghani</h3>
+            <div class="role">Cosmetologist &amp; Laser Specialist</div>
+            <p class="qualifications">Certified Laser Specialist &amp; Medical Aesthetic Practitioner</p>
+          </div>
+          <div class="team-card reveal">
+            <div class="team-portrait">
+              <img src="assets/dr-ritu-pitroda.jpeg" alt="Dr. Ritu Pitroda — Cosmetologist & Trichologist at La Sparkle" loading="lazy" />
+            </div>
+            <h3>Dr. Ritu Pitroda</h3>
+            <div class="role">Cosmetologist &amp; Trichologist</div>
+            <p class="qualifications">Clinical Hair Restoration Specialist &amp; Aesthetic Consultant</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- TREATMENTS -->
     <section class="section bg-lilac" id="treatments">
