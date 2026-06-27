@@ -912,7 +912,7 @@
       <div class="wrap">
         <span class="eyebrow center">Clinical Gallery</span>
         <h1>Our <em>Skincare</em> transformations</h1>
-        <p>Real results, expert dermatological care, and clinical moments. Click any image to view details and zoom in.
+        <p>Real results, expert care, and clinical moments. Click any image to view details and zoom in.
         </p>
       </div>
     </header>
@@ -1253,7 +1253,7 @@
               io.unobserve(en.target);
             }
           });
-        }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+        }, { threshold: 0.01, rootMargin: '0px 0px -20px 0px' });
         reveals.forEach(function (el) { io.observe(el); });
       } else {
         reveals.forEach(function (el) { el.classList.add('in'); });
